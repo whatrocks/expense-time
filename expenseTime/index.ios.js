@@ -7,10 +7,7 @@ import React, {
 } from 'react-native';
 
 import Login from './src/containers/Login';
-
-// Todo: Research
 import { Provider } from 'react-redux';
-// Todo: Research
 import configureStore from './src/store/configureStore';
 
 const store = configureStore();
@@ -19,7 +16,14 @@ class expenseTime extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Login />
+          <NavigatorIOS
+            style={styles.container}
+            navigationBarHidden = {true}
+            initialRoute = {{
+              title: 'ExpenseTime',
+              component: Login
+            }}
+          />
       </Provider>
     );
   }
