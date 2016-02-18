@@ -5,6 +5,13 @@ var api = {
       .then((res) => {
         return res.json();
       })
+  },
+
+  getTransactions(authToken) {
+    return fetch(`https://api.expensify.com?command=Get&authToken=${authToken}&returnValueList=transactionList`)
+      .then((res) => {
+        return res.json();
+      })
   }
 
 };

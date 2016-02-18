@@ -7,25 +7,35 @@ import React, {
   TextInput
 } from 'react-native';
 
+import TransactionsFeed from '../containers/TransactionsFeed';
 
 class Login extends Component {
   
+  goToFeed() {
+    this.props.navigator.replace({
+      component: TransactionsFeed
+    });
+  }
+
   signin() {
     
-    var  { authenticateWithExpensify, userDetails } = this.props; 
+    var  { authenticateWithExpensify, userDetails, updateLoginInputText } = this.props; 
 
-    // Note
     // email: 'expensifytest@mailinator.com',
     // password: 'hire_me'
 
     // TODO: Add spinner to signal that its processing
     authenticateWithExpensify(userDetails, (res) => {
 
-      if ( res.jsonCode === '200' ) {
-
-      // TODO: Add error handling if incorrect login!
+      if ( res.jsonCode === 200 ) {
+        updateLoginInputText('email', '');
+        updateLoginInputText('password', '');
+        this.goToFeed();
       } else {
-        // Please try again
+        console.log("ERROR");
+        // TODO: Add error handling if incorrect login!
+        // Reset the components?
+        // Display the error message
       }
     });
 
