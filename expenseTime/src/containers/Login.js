@@ -5,7 +5,8 @@ import * as LoginActions from '../actions/login';
 
 function mapStateToProps(state) {
   return {
-    
+    token: state.login.token,
+    userDetails: state.login.userDetails
   };
 }
 
