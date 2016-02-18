@@ -6,8 +6,7 @@ export function updateFeed(authToken) {
   return dispatch => {
     return api.getTransactions(authToken)
       .then((res) => {
-        // TODO: Not yet updating the page even tho it returns
-        dispatch(refreshFeedDataAction(res))
+        dispatch(refreshFeedDataAction(res.transactionList));
     })
   }
 };

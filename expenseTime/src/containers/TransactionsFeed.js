@@ -6,7 +6,7 @@ import * as TransactionsFeedActions from '../actions/feed';
 function mapStateToProps(state) {
   return {
     token: state.login.token,
-    feed: state.feed.list
+    feed: state.feed
   };
 }
 

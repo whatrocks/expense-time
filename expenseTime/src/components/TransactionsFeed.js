@@ -15,16 +15,16 @@ class TransactionsFeed extends Component {
 
   componentDidMount() {
     var { feed } = this.props;
-    console.log("I have mounted, and feed is now: ", feed);
   }
 
   render() {
-    var feed  = [1,2,3];
-    var list = feed.map((item, index) => {
+    // TODO: Show loading indicator
+    // TODO: Sort them
+    var currentFeed = this.props.feed.list || this.props.feed;
+    var list = currentFeed.map((item, index) => {
     return (
-        <View>
-          <Text>HELLO</Text>
-          <Text>WORLD</Text>
+        <View key={index}>
+          <Text>{item.inserted}</Text>
         </View>
       );
     });

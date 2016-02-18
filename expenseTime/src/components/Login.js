@@ -19,10 +19,7 @@ class Login extends Component {
 
   signin() {
     
-    var  { authenticateWithExpensify, userDetails, updateLoginInputText } = this.props; 
-
-    // email: 'expensifytest@mailinator.com',
-    // password: 'hire_me'
+    var  { authenticateWithExpensify, userDetails, updateLoginInputText } = this.props;
 
     // TODO: Add spinner to signal that its processing
     authenticateWithExpensify(userDetails, (res) => {
