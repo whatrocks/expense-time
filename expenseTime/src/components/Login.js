@@ -4,7 +4,8 @@ import React, {
   Text,
   View,
   TouchableHighlight,
-  TextInput
+  TextInput,
+  Image
 } from 'react-native';
 
 import TransactionsFeed from '../containers/TransactionsFeed';
@@ -35,7 +36,6 @@ class Login extends Component {
         // Display the error message
       }
     });
-
   }
 
   handleInputChange(fieldName, event) {
@@ -44,11 +44,12 @@ class Login extends Component {
   }
 
   render() {
-
     return (
       <View style={styles.container}>
-        <Text style={styles.logo}> EXPENSE </Text>
-        <Text style={styles.logo}> TIME </Text>
+        <Image
+          style={styles.image}
+          source = {require('../assets/et.png')}
+        />
         <View style={styles.loginForm}>
           <TextInput
             style = {styles.textInput}
@@ -78,13 +79,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#2CA1DB'
+    backgroundColor: 'white'
   },
-  logo: {
-    fontSize: 50,
-    textAlign: 'center',
-    color: 'white',
-    fontWeight: 'bold',
+  image: {
+    height: 110,
+    width: 275
   },
   loginForm: {
     marginTop: 75,
@@ -92,7 +91,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textInput: {
-    height: 40,
+    height: 50,
     width: 300,
     padding: 4,
     textAlign: 'center',
@@ -101,7 +100,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     color: '#414C52',
     fontWeight: 'bold',
-    backgroundColor: 'white',
+    borderColor: '#2CA1DB',
+    borderWidth: 3,
     alignSelf: 'center'
   },
   button: {

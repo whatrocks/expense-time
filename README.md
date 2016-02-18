@@ -1,5 +1,7 @@
 # expense-time
 
+<img src="./et.png">
+
 >Expenses. Excitement. A Jedi craves not these things.
 
 Expense Time is a React Native iOS app to view and create expenses using the Expensify API.
@@ -12,5 +14,9 @@ Expense Time is a React Native iOS app to view and create expenses using the Exp
 
 ## Usage
 - clone the repo
-- npm3 install
+
+```bash
+cd expenseTime
+npm3 install
+```
 - build and run the project in xcode
