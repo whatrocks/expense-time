@@ -19,10 +19,13 @@ class TransactionsFeed extends Component {
 
   render() {
     // TODO: Show loading indicator
-    // TODO: Sort them
     var currentFeed = this.props.feed.list || this.props.feed;
-    var list = currentFeed.map((item, index) => {
-    return (
+    var list = currentFeed
+      .sort((a, b) => {
+        return b.inserted.replace(/\D+/g,'')-a.inserted.replace(/\D+/g,'');
+      })
+      .map((item, index) => {
+       return (
         <View key={index}>
           <Text>{item.inserted}</Text>
         </View>
