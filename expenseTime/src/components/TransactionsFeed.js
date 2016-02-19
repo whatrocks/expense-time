@@ -7,16 +7,23 @@ import React, {
   Image
 } from 'react-native';
 
+// import Create from '../containers/Create';
+
 class TransactionsFeed extends Component {
   
   componentWillMount() {
     var { updateFeed, token } = this.props;
     updateFeed(token);
-    console.log("status:", this.props.navigator.navigationBarHidden);
   }
 
   componentDidMount() {
     var { feed } = this.props;
+  }
+
+  goToCreate(){
+    this.props.navigator.push({
+      component: Login
+    });
   }
 
   renderDate(date) {
@@ -105,13 +112,21 @@ class TransactionsFeed extends Component {
           );
         });
 
+        // Change this to a LISTVIEW
         return (
-          <ScrollView
-            automaticallyAdjustContentInsets={false}
-            scrollEventThrottle={200}
-            style={styles.container}>
-            {list}
-          </ScrollView>
+          <View style={styles.container}>
+            <View style={styles.topRow}>
+              <Text style={styles.button}></Text>
+              <Text style={styles.title}>Expense Time</Text>
+              <Text style={styles.button}>+</Text>
+            </View>
+            <ScrollView
+              automaticallyAdjustContentInsets={false}
+              scrollEventThrottle={200}
+              style={styles.feed}>
+              {list}
+            </ScrollView>
+          </View>
         ); 
       }
     }
@@ -122,8 +137,31 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    marginTop: 40
-  }, 
+  },
+  topRow: {
+    paddingTop: 20,
+    backgroundColor: '#2CA1DB',
+    flexDirection: 'row'
+  },
+  button: {
+    width: 40,
+    color: 'white',
+    fontSize: 30,
+    alignSelf: 'center',
+    textAlign: 'right',
+    paddingRight: 10
+  },
+  title: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    flex: 1,
+    alignSelf: 'center',
+    textAlign: 'center',
+  },
+  feed: {
+    backgroundColor: 'white'
+  },
   image: {
     height: 325,
     width: 210,

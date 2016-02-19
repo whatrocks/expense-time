@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: '#2CA1DB'
   },
   image: {
     height: 110,
@@ -100,9 +100,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     color: '#414C52',
     fontWeight: 'bold',
-    borderColor: '#2CA1DB',
+    borderColor: '#00D3A3',
     borderWidth: 3,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    backgroundColor: 'white'
   },
   button: {
     width: 120,
